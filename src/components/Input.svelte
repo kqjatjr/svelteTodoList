@@ -1,13 +1,16 @@
 <!-- <input class="todo-input" placeholder="할일을 입력하세요"/>
 <button class="todo-add-button">추가</button> -->
+
 <script>
-  
+  export let todoValue;
+  export let addTodo;
+  export let handleKeyUp;
 </script>
 
 
 <div>
-  <input class="todo-input" placeholder="할일을 입력하세요"/>
-  <button class="todo-button">추가</button>
+  <input class="todo-input" placeholder="할일을 입력하세요" bind:value={todoValue} on:keyup={e => handleKeyUp(e)}/>
+  <button class="todo-button" on:click={addTodo}>추가</button>
 </div>
 
 <style>
